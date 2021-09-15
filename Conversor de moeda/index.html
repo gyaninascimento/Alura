@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">
+          Conversor de moedas
+        </h1>
+        <p class="page-subtitle">
+          Descubra os valores em Real
+        </p>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt=""><br><br>
+        <label for="moeda">Insira o valor</label><br>
+        <input type="number" id="valor" size="2" /><br>
+        <button type="submit" onclick="Converter()">Converter</button>
+        <h2 id="valorConvertido"></h2>
+      </div>
+      <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+</body>
+<script>
+    function Converter() {
+  //evento onclic do html procura a função, a funçao só executa quando é chamada
+  var valorElemento = document.getElementById("valor"); //variavel que guarda o valor do input e puxa pelo documentbyelementby o elelemento/tag html INTEIRO para o js
+  var valor = valorElemento.value; //.value=pegue somente o conteudo do input ao inves da linha inteira, retorna em string
+  var valorEmDolarNumerico = parseFloat(valor); //parseFloat=pegue o (o que esta entre parenteses) valor inputado e transoforme em numero decimal
+  var valorEmReal = valorEmDolarNumerico * 5; //vai calcular o input
+  var elementoValorConvertido = document.getElementById("valorConvertido"); //para imprimir o valor na tela - eu quero colocar o java script dentro do html, altero o valor do elemento html id="valorConvertido" e colocar o valor dentro desse valor convertido
+  var valorConvertido = "O resultado em real é R$ " + valorEmReal;
+  elementoValorConvertido.innerHTML = valorConvertido; //pega o elemento convertido e quero inserir dentro a frase para imprimir na tela
+
+  console.log(valorEmReal); //imprime no console
+}
+
+//converter para outras moedas com botoes e bitcoins
+//converter temperatura
+//conversor km para anos luz
+
+</script>
+</html>
