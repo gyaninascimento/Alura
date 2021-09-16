@@ -1,3 +1,0 @@
-Igualdade estrita (===)
-O operador de igualdade estrita ( ===) verifica se seus dois operandos são iguais, retornando um resultado booleano. Ao contrário do operador de igualdade , o operador de igualdade estrita sempre considera operandos de tipos diferentes como diferentes.
-

@@ -1,0 +1,69 @@
+
+Operador	Operação	Exemplo
+>	Maior que	(a > b)
+<	Menor que	(a < b)
+>=	Maior ou igual a	(a >= b)
+<=	Menor ou igual a	(a <= b)
+==	Igual a	(a == b)
+!=	Diferente de	(a !== b)
+===	Idêntico a	(a === b)
+!==	Não idêntico a	(a !== b)
+&&	E/and	(a && b)
+ll	Ou/or	(a ll b)
+
+
+
+Igualdade estrita (===)
+O operador de igualdade estrita ( ===) verifica se seus dois operandos são iguais, retornando um resultado booleano. Ao contrário do operador de igualdade , o operador de igualdade estrita sempre considera operandos de tipos diferentes como diferentes.
+
+Se os operandos forem de tipos diferentes, retorne false.
+Se ambos os operandos forem objetos, retorne true apenas se eles se referirem ao mesmo objeto.
+Se ambos os operandos são null ou ambos os operandos são undefined, retorna true.
+Se qualquer operando for NaN, retorna false.
+
+Caso contrário, compare os valores dos dois operandos:
+Os números devem ter os mesmos valores numéricos. +0e -0 são considerados o mesmo valor.
+Strings devem ter os mesmos caracteres na mesma ordem.
+Os booleanos devem ser ambos trueou ambos false.
+
+A diferença mais notável entre este operador e o operador de igualdade ( ==) é que se os operandos forem de tipos diferentes, o ==operador tenta convertê-los para o mesmo tipo antes de comparar.
+___________________________________________________________________________________________________
+
+Math.random()
+A função Math.random() retorna um número pseudo-aleatório no intervalo [0, 1[, ou seja, de 0 (inclusivo) até, mas não incluindo, 1 (exclusivo), que depois você pode dimensionar para um intervalo desejado.  A implementação seleciona uma semente para o algoritmo de geração de números aleatórios; esta semente não pode ser escolhida ou reatribuída.
+
+Gerando um número aleatório entre 0 (inclusivo) e 1 (exclusivo)
+function getRandom() {
+  return Math.random();
+}
+
+Gerando um número aleatório entre dois valores
+Este exemplo retorna um número entre dois valores definidos. O valor retornado será maior ou igual a min, e menor que max.
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+
+Gerando um número inteiro aleatório entre dois valores
+Este exemplo retorna um número inteiro entre dois valores definidos. O valor não poderá ser menor que min (ou do próximo inteiro maior que min, caso min não seja inteiro), e será menor (mas não igual) a max.
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+Pode ser tentandor usar Math.round() para arredondar min e max, mas dessa maneira a aleatoriedade dos números seguiria uma distribuição não-uniforme, que talvez não seja o que você precisa.
+
+Gerando um número inteiro aleatório entre dois valores, inclusive
+A função getRandomInt() acima tem intervalo com o valor mínimo incluído e o máximo excluído. Mas se você precisar que a função inclua, tanto o mínimo quanto o máximo, em seus resultados? A função getRandomIntInclusive() abaixo faz isso.
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+

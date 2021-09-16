@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Aluraflix</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">
+          Aluraflix
+        </h1>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo" alt="">
+      </div>
+      <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+      </a>
+
+      <script>
+          var listaFilmes = ["https://capas-p.imagemfilmes.com.br/164806_000_p.jpg", "http://blog.fotoregistro.com.br/wp-content/uploads/2018/11/capa-filme-avatar.jpg", "http://2.bp.blogspot.com/-TOCRLYBV3N4/UsbbAXBZmkI/AAAAAAAAPuM/DbPHOcuv6HA/s1600/A-Menina-Que-Roubava-Livros-capa-filme-1.jpg"]
+
+          for (var i = 0; i< listaFilmes.length; i++){
+              document.write("<img src=" + listaFilmes[i] + ">")
+          }
+      </script>
+</body>
+</html>

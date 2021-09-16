@@ -1,18 +1,19 @@
-var numeroSecreto = parseInt(Math.random()*11);
+var numeroSecreto = parseInt(Math.random() * 11);
 
 function Chutar() {
-    var elementoResultado = document.getElementById("resultado")
+  var elementoResultado = document.getElementById("resultado");
   var chute = parseInt(document.getElementById("valor").value);
   console.log(chute);
-  if (chute ==numeroSecreto){
-    elementoResultado.innerHTML = "Você acertou"
-      console.log ("acertou")
-  }else if (chute >10 || chute <0){
-    elementoResultado.innerHTML = "Você deve digitar um número de 0 a 10"
-      console.log("Você deve digitar um número de 0 a 10")
-  }else
-  elementoResultado.innerHTML = "Você errou, o número secreto era " + numeroSecreto
-  console.log ("errou")
+  if (chute == numeroSecreto) {
+    elementoResultado.innerHTML = "Você acertou";
+    console.log("acertou");
+  } else if (chute > 10 || chute < 0) {
+    elementoResultado.innerHTML = "Você deve digitar um número de 0 a 10";
+    console.log("Você deve digitar um número de 0 a 10");
+  } else
+    elementoResultado.innerHTML =
+      "Você errou, o número secreto era " + numeroSecreto;
+  console.log("errou");
 }
 
 /** 1 = ATRIBUIÇÃO
