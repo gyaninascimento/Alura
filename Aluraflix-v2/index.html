@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <title>
+    Imersão Dev - Aula 05
+  </title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="page-title">
+      Aluraflix
+    </h1>
+    <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-aluraflix.svg" class="page-logo" alt="">
+    <p class="page-subtitle">
+      Qual seu filme favorito?
+    </p>
+    <div class="form-wrapper">
+      <input type="text" id="filme" name="filme" placeholder="Insira endereço de imagem">
+      <button onClick="adicionarFilme()">Adicionar Filme</button>
+    </div>
+  </div>
+  <div id="listaFilmes"></div>
+  <a href="https://alura.com.br/" target="_blank">
+    <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+  </a>
+</body>
+    <script>
+        function adicionarFilme() {//quando clica no html para adicionar filmes, a funcao adicionar filmes é chamada
+            var filmeFavorito = document.getElementById("filme").value;//variavel para pegar o valor digitado no  campo filme no html
+            if (filmeFavorito.endsWith(".jpg")){//validar se o valor termina com jpg ou nao
+                listarFilmesNaTela(filmeFavorito)//se a img for jpg chamara a funcao para listar filmes na tela
+            } else{
+                console.error("Endereço de filme inválido ")//caso nao seja jpg, dispara essa mensagem de erro no console
+            }
+            
+            document.getElementById("filme").value = "";//limpa o que esta escrito no campo
+        }
+
+        function listarFilmesNaTela(filme) {//(filme chama a variavel filmefavorito da outra funcao)se terminar com jpg, vamos listar filmes na tela
+            var elementoFilmeFavorito = "<img src=" + filme + ">"//mostrar no img a imagem inserida
+            var elementoListaFilmes = document.getElementById("listaFilmes")//onde quero exibir o filme no html
+            elementoListaFilmes.innerHTML = elementoListaFilmes.innerHTML + elementoFilmeFavorito//para adicionar mais filmes e nao sobrescrever
+        }
+    </script>
+</html>
