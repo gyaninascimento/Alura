@@ -132,6 +132,9 @@ h2 {
             console.log(cartaMaquina)
 
             var numeroCartaJogador = parseInt(Math.random()*3)//gere um numero aleatorio inteiro entre 0 e 2
+            while (numeroCartaMaquina == numeroCartaJogador){
+                numeroCartaJogador = parseInt(Math.random() * 3);
+            }//enquanto o n da carta do jogador for igual a carta da maquina, sorteie de novo, e quamdo as cartas forem diferentes, saia do while
             cartaJogador = cartas[numeroCartaJogador]//o indice da carta da maquina vai ser o n gerado aleatorio
             console.log(cartaJogador)
         }
