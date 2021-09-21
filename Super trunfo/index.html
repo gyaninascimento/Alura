@@ -145,10 +145,12 @@ h2 {
         }
 
         function exibirOpcoes(){
-            var opcoes = document.getElementById("opcoes")
+            var opcoes = document.getElementById("opcoes");
+            var opcoesTexto = "";
            for (var atributo in cartaJogador.atributos){
-               opcoesTexto = "<input type='radio' name='atributo' value='" + atributo + " '>"
+               opcoesTexto += "<input type='radio' name='atributo' value='" + atributo + " '>" + atributo;
            } //percorrer atributos
+           opcoes.innerHTML = opcoesTexto
         }
     </script>
 </body>
