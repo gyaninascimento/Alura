@@ -158,7 +158,7 @@ var cartaMaquina;
 var cartaJogador;
 
 function sortearCarta() {
-  //sortear uma carta p  maquina e outra p jogador de forma aleatoria
+  //quando clicar, sortear uma carta p  maquina e outra p jogador de forma aleatoria
   var numeroCartaMaquina = parseInt(Math.random() * 3); //gere um numero aleatorio inteiro entre 0 e 2
   cartaMaquina = cartas[numeroCartaMaquina]; //o indice da carta da maquina vai ser o n gerado aleatorio
 
@@ -172,7 +172,7 @@ function sortearCarta() {
   document.getElementById("btnSortear").disabled = true;
   document.getElementById("btnJogar").disabled = false;
 
-  exibirOpcoes();
+  exibirOpcoes();//voÇe vai usar qual atributo
 }
 
 function exibirOpcoes() {
@@ -198,7 +198,7 @@ function obtemAtributoSelecionado() {
   }
 }
 
-function jogar() {
+function jogar() {//quando clicar em jogar
   var atributoSelecionado = obtemAtributoSelecionado();
   var elementoResultado = document.getElementById("resultado");
   var valorCartaJogador = cartaJogador.atributos[atributoSelecionado];
