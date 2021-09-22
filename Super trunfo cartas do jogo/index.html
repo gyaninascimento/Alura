@@ -81,11 +81,15 @@ h2 {
     margin: 20px 10px;
 }
 
+#resultado{
+    color: white;
+}
+
 .resultado-final {
     color: white;
     font-size: 2rem;
     text-transform: uppercase;
-    font-weigth: bolder;
+    font-weight: bolder;
     padding: 1rem;
     border: 2px solid black;
     background-color: black;
@@ -153,6 +157,123 @@ form {
             <div id="resultado"></div>
         </form>
     </div>
+    <script>
+        var carta1 = {
+  nome: "Bulbassauro",
+  imagem: "https://arazao.com.br/wp-content/uploads/2019/03/bulbassauro_400x400.jpg",
+  atributos: {
+    ataque: 7,
+    defesa: 8,
+    magia: 6
+  }
+};
+
+var carta2 = {
+  nome: "Darth Vader",
+  imagem: "https://s2.glbimg.com/9QD6dFtn-GZGRrKLgy2fJnX08h4=/512x320/smart/e.glbimg.com/og/ed/f/original/2017/12/01/darth-vader-star-wars.jpg",
+  atributos: {
+    ataque: 9,
+    defesa: 8,
+    magia: 2
+  }
+};
+
+var carta3 = {
+  nome: "Shiryu de dragão",
+  imagem: "https://img.elo7.com.br/product/zoom/2B30956/poster-quadro-shiryu-de-dragao-30x42cm-nerd.jpg",
+  atributos: {
+    ataque: 5,
+    defesa: 9,
+    magia: 10
+  }
+};
+
+var cartas = [carta1, carta2, carta3];
+var cartaMaquina;
+var cartaJogador;
+
+function sortearCarta() {
+  var numeroCartaMaquina = parseInt(Math.random() * cartas.length); 
+  cartaMaquina = cartas[numeroCartaMaquina]; 
+
+  var numeroCartaJogador = parseInt(Math.random() * cartas.length); 
+  while (numeroCartaMaquina == numeroCartaJogador) {
+    numeroCartaJogador = parseInt(Math.random() * cartas.length);
+  } 
+  cartaJogador = cartas[numeroCartaJogador]; 
+
+  document.getElementById("btnSortear").disabled = true;
+  document.getElementById("btnJogar").disabled = false;
+
+  exibirCartaJogador()
+}
+
+function obtemAtributoSelecionado() {
+  var radioAtributos = document.getElementsByName("atributo");
+
+  for (var i = 0; i < radioAtributos.length; i++) {
+    if (radioAtributos[i].checked == true) {
+      return radioAtributos[i].value;
+    }
+  }
+}
+
+function jogar() {//quando clicar em jogar
+  var atributoSelecionado = obtemAtributoSelecionado();
+  var divResultado = document.getElementById("resultado");
+ 
+  if (cartaJogador.atributos[atributoSelecionado] > cartaMaquina.atributos[atributoSelecionado]) {
+    htmlResultado = "<p class='resultado-final'>Você venceu!</p>";
+  } else if (cartaJogador.atributos[atributoSelecionado] < cartaMaquina.atributos[atributoSelecionado]) {
+    htmlResultado = "<p class='resultado-final'>Você perdeu!</p>";
+  } else {
+    htmlResultado = "<p class='resultado-final'>Você empatou!</p>";
+  }
+  divResultado.innerHTML = htmlResultado;
+  exibirCartaMaquina()
+
+  document.getElementById("btnJogar").disabled = true;
+  
+}
+
+function exibirCartaJogador() {
+    var divCartaJogador = document.getElementById("carta-jogador")
+    var moldura = "<img src='https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png' style='width: inherit; height: inherit; position: absolute;'>"
+    divCartaJogador.style.backgroundImage = `url(${cartaJogador.imagem})`
+    //divCartaJogador.style.backgroundImage = "url(" + cartaJogador.imagem + ")"
+    var nome = `<p class="carta-subtitle">${cartaJogador.nome}</p>`
+    var opcoesTexto = "";
+
+  for (var atributo in cartaJogador.atributos) {
+    opcoesTexto += "<input type='radio' name='atributo' value='" + atributo + "'>" + atributo + "" + cartaJogador.atributos [atributo] + "<br>";
+  }
+  
+  var tagHTML = "<div id='opcoes' class='carta-status'>"
+
+  divCartaJogador.innerHTML = moldura + nome + tagHTML + opcoesTexto + "</div>"
+}
+
+
+
+function exibirCartaMaquina() {
+    var divCartaMaquina = document.getElementById("carta-Maquina")
+    var moldura = "<img src='https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent-ajustado.png' style='width: inherit; height: inherit; position: absolute;'>";
+    divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`
+    var nome = `<p class="carta-subtitle">${cartaMaquina.nome}</p>`
+    var opcoesTexto = ""
+
+  for (var atributo in cartaMaquina.atributos) {
+    opcoesTexto += "<p name='atributo' value='" + atributo + "'>" + atributo + "" + cartaMaquina.atributos[atributo] + "<br>";
+  }
+  
+  var tagHTML = "<div id='opcoes' class='carta-status'>"
+  divCartaMaquina.innerHTML = moldura + nome + tagHTML + opcoesTexto + "</div>"
+}
+    </script>
+    <!--Criar de fato um baralho, com várias outras cartas
+Desenvolver um sistema em que a cada carta que um jogador ganhe, ele fique com a carta do oponente e vice versa
+Transformar as funções exibirCartaMaquina() e exibirCartaJogador() em apenas uma, chamada exibirCarta(), utilizando para isso a passagem de parâmetros
+Utilizar seus personagens e jogos preferidos nesse projeto-->
 </body>
 
 </html>
