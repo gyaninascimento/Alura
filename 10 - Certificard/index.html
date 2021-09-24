@@ -22,9 +22,13 @@
             padding: 64px;
         }
 
+        .cabecalho{
+            display: flex;
+            justify-content: space-between;
+        }
+
         .perfil{
             display: flex;
-            align-items: center;
         }
 
         .perfil-foto{
@@ -46,42 +50,159 @@
             font-size: 24px;
         }
 
+        .tema button{
+            align-self: flex-end;
+            font-size: 24px;
+            font-weight: 400;
+            padding: 8px 16px;
+            background: #ecf4ff;
+            border-radius: 100px;
+        }
+
         .projetos{
             display: flex;
             flex-direction: column;
+            background: linear-gradient(230.65deg, #499cfe 27.49%, #9cc8fc 83.19%);
+            margin-top: 32px;
+            padding: 32px;
+            box-shadow: 2px 2px 4px rgba(16, 16, 16, 0.42);
+            border-radius: 20px;
         }
 
-        ul{
+        .projetos-titulo{
             list-style: none;
+            font-weight: 700;
+            font-size: 36px;
         }
 
-        a{
+        .projetos-item{
+            list-style-type: none;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 48px;
+        }
+
+        .projetos-item a{
             text-decoration: none;
+            color: #1c1c1c;
+        }
+
+        .dark {
+            background: linear-gradient(236.85deg, #375b86 27.26%, #6b87a9 96.03%);
+        }
+
+        .dark .container {
+            background: #333439;
+            color: #f6f6f6;
+        }
+
+        .dark .projetos {
+            color: #f6f6f6;
+        }
+
+        .dark .tema button{
+            background: #1c1c1c;
+            color: #ffffff; 
+            border: 2px solid #f7f7f7;
         }
     </style>
 </head>
 <body>
     <div class="container">
-    <header class="perfil">
+    <header class="cabecalho">
+        <div class="perfil">
      <img class="perfil-foto" src="https://github.com/gyaninascimento.png">
      <div class="titulo">
          <h1>Gyani Nascimento</h1>
          <h3>Desenvolvedora Full Stack</h3>
      </div><!--titulo--> 
+    </div><!--perfil-->
+     <div class="tema">
+         <button onclick="mudaTema()">Alterar tema</button>
+        </div><!--tema-->
+        
+     
     </header>
     <main class="projetos">
-        <ul>Projetos<ul>
-            <li><a href="https://codepen.io/gyaninascimento/pen/qBjjKxW">🧮 Calculadora de média</a></li>
-            <li><a href="https://codepen.io/gyaninascimento/pen/YzQrYZe">💱 Conversor de moedas</a></li>
-            <li><a href="https://codepen.io/gyaninascimento/pen/qBjVVaG">🔮 Mentalista</a></li>
-            <li><a href="https://codepen.io/gyaninascimento/pen/zYzpZYV">📺 Aluraflix</a></li>
-            <li><a href="https://codepen.io/gyaninascimento/pen/zYzREbd">📺 Aluraflix 2.0</a></li>
-            <li><a href="https://codepen.io/gyaninascimento/pen/YzQLQMg">🥇 Tabela de classificação</a></li>
-            <li><a href="https://codepen.io/gyaninascimento/pen/OJgEmJp">🃏 Supertrunfo</a></li>
-            <li><a href="https://codepen.io/gyaninascimento/details/zYzLNjK">🃏 Supertrunfo 2.0</a></li>
-            <li><a href="https://codepen.io/gyaninascimento/pen/BaZONdp">🤸 Portfólio</a></li>
+        <ul class="projetos-titulo">Projetos<ul>
+            <li class="projetos-item"><p>🧮 Calculadora de média</p>
+                <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="qBjjKxW" data-user="gyaninascimento" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/gyaninascimento/pen/qBjjKxW">
+                    Calculadora de média</a> by gyaninascimento (<a href="https://codepen.io/gyaninascimento">@gyaninascimento</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </li>
+            <li class="projetos-item"><p>💱 Conversor de moedas</p>
+                <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="YzQrYZe" data-user="gyaninascimento" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/gyaninascimento/pen/YzQrYZe">
+                    Conversor de moedas - ID3</a> by gyaninascimento (<a href="https://codepen.io/gyaninascimento">@gyaninascimento</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </li>
+            <li class="projetos-item"><p>🔮 Mentalista</p>
+                <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="qBjVVaG" data-user="gyaninascimento" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/gyaninascimento/pen/qBjVVaG">
+                    Mentalista - ID3</a> by gyaninascimento (<a href="https://codepen.io/gyaninascimento">@gyaninascimento</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </li>
+            <li class="projetos-item"><p>📺 Aluraflix</p><p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="zYzpZYV" data-user="gyaninascimento" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                <span>See the Pen <a href="https://codepen.io/gyaninascimento/pen/zYzpZYV">
+                AluraFlix v1- ID3</a> by gyaninascimento (<a href="https://codepen.io/gyaninascimento">@gyaninascimento</a>)
+                on <a href="https://codepen.io">CodePen</a>.</span>
+              </p>
+              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+            </li>
+            <li class="projetos-item"><p>📺 Aluraflix 2.0</p>
+                <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="zYzREbd" data-user="gyaninascimento" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/gyaninascimento/pen/zYzREbd">
+                    Aluraflix - dia 5</a> by gyaninascimento (<a href="https://codepen.io/gyaninascimento">@gyaninascimento</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </li>
+            <li class="projetos-item"><p>🥇 Tabela de classificação</p>
+                <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="YzQLQMg" data-user="gyaninascimento" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/gyaninascimento/pen/YzQLQMg">
+                    Tabela de classificação</a> by gyaninascimento (<a href="https://codepen.io/gyaninascimento">@gyaninascimento</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </li>
+            <li class="projetos-item"><p>🃏 Supertrunfo</a>
+                <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="OJgEmJp" data-user="gyaninascimento" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/gyaninascimento/pen/OJgEmJp">
+                    Super Trunfo - Dia 7</a> by gyaninascimento (<a href="https://codepen.io/gyaninascimento">@gyaninascimento</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </li>
+            <li class="projetos-item"><p>🃏 Supertrunfo 2.0</p>
+                <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="zYzLNjK" data-user="gyaninascimento" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/gyaninascimento/pen/zYzLNjK">
+                    Super Trunfo - Dia 8</a> by gyaninascimento (<a href="https://codepen.io/gyaninascimento">@gyaninascimento</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </li>
+            <li class="projetos-item"><p>🤸 Portfólio</p>
+                <p class="codepen" data-height="300" data-theme-id="dark" data-default-tab="html,result" data-slug-hash="BaZONdp" data-user="gyaninascimento" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>See the Pen <a href="https://codepen.io/gyaninascimento/pen/BaZONdp">
+                    Certificard</a> by gyaninascimento (<a href="https://codepen.io/gyaninascimento">@gyaninascimento</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</span>
+                  </p>
+                  <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+                </li>
     </main>
 </div><!--container-->
+<script>
+    function mudaTema() {
+        document.body.classList.toggle("dark")
+    }
+</script>
 <!--Aprendemos a mexer no Figma e transformar o design em código
 Entendemos melhor como funciona HTML e CSS
 Estruturamos o nosso portfólio com HTML, aprendendo todas as tags necessárias pra isso
